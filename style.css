@@ -1,0 +1,130 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.quiz-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 25px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  padding: 3rem 2rem;
+  width: 100%;
+  max-width: 600px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.7rem;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+
+.question {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.answers button,
+.restart-btn {
+  background: linear-gradient(145deg, #ffffff1a, #ffffff26);
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.answers button:hover,
+.restart-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+}
+
+.restart-btn {
+  margin-top: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.result {
+  display: none;
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.6s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 2rem 1rem;
+  }
+
+  h1 {
+    font-size: 2.1rem;
+  }
+
+  .question {
+    font-size: 1.1rem;
+  }
+
+  .answers button,
+  .restart-btn {
+    font-size: 0.95rem;
+  }
+}
+
